@@ -61,8 +61,6 @@ The complete list of learning resources is available [here](resources/cpp_learni
 
 ## Future work
 
-- Resources:
-    - Complete list of learning resources.
 - Topics:
     - Quality tools: list and describe some quality tools (for code formatting, static analysis, etc) commonly used during the development of a C++ project.
     - C++ compilation process: describe the process using a code example.
