@@ -2,4 +2,4 @@
 
 List of C++ topics:
 
-- Currently empty.
+- [C++ development tooling](development_tooling/cpp_development_tooling.md).
