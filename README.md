@@ -38,8 +38,6 @@ topic_name/
 └── assets/
 ```
 
-The complete list of available topics is [here](topics/README.md).
-
 ## Exercises
 
 The [`exercises`](exercises/) directory contains practice problems used to reinforce concepts learned throughout the study process. Each exercise is self-contained and typically is organized as follows:
@@ -50,8 +48,6 @@ exercise_name/
 ├── src/
 └── assets/
 ```
-
-The complete list of available exercises is [here](exercises/README.md).
 
 ## Learning resources
 
