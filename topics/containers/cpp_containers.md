@@ -344,3 +344,42 @@ flags[2] = true;
 ```
 
 **Use it when:** compact storage of boolean values is useful.
+
+## Container selection
+
+```mermaid
+flowchart TD
+    A([Choose a C++ container]) --> B{Primary requirement?}
+
+    B --> SEQ[Sequence of elements]
+    B --> KEY[Lookup by key]
+    B --> ADAPT[Restricted access]
+    B --> SPEC[Views and specialized data]
+
+    SEQ --> SIZE{Size and workload?}
+    SIZE -->|Fixed size| ARR[std::array]
+    SIZE -->|Highly variable size| VAR{How does size change?}
+    SIZE -->|Mostly append and iterate| V[std::vector]
+    SIZE -->|Frequent operations at both ends| DQ[std::deque]
+    SIZE -->|Frequent insert/erase at known position| L[std::list / std::forward_list]
+    VAR -->|Grows and shrinks, contiguous access desired| VV["std::vector<br/>reserve() when growth is predictable"]
+    VAR -->|Large fluctuations, frequent front/back changes| VD[std::deque]
+    VAR -->|Need to release excess capacity| SHRINK["std::vector<br/>shrink_to_fit() or swap with a new vector"]
+    VAR -->|Many small objects, stable references needed| VL[Consider std::list<br/>but benchmark first]
+
+    KEY --> ORDER{Need ordered keys or range queries?}
+    ORDER -->|Yes| SORT[std::map / std::set<br/>or multi variants]
+    ORDER -->|No| HASH[std::unordered_map / std::unordered_set<br/>or multi variants]
+
+    ADAPT --> ACCESS{Access discipline?}
+    ACCESS -->|LIFO| ST[std::stack]
+    ACCESS -->|FIFO| QU[std::queue]
+    ACCESS -->|Priority order| PQ[std::priority_queue]
+
+    SPEC --> TYPE{Data type or ownership?}
+    TYPE -->|Contiguous view| SP["std::span (C++20)"]
+    TYPE -->|Owned text / text view| TEXT[std::string / std::string_view]
+    TYPE -->|Multidimensional view| MD["std::mdspan (C++23)"]
+    TYPE -->|Fixed or dynamic bits| BITS[std::bitset / std::vector<bool>]
+    TYPE -->|Numeric arrays / initialization| OTHER[std::valarray / std::initializer_list]
+```

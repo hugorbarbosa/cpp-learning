@@ -58,7 +58,6 @@ The complete list of learning resources is available [here](resources/cpp_learni
 ## Future work
 
 - Topics:
-    - Containers: refer how to select the adequate container for a specific operation.
     - C++ compilation process: describe the process using a code example.
     - Debugging: tutorial of how to debug C++ code and how to analyze a core dump using GDB.
 
