@@ -10,6 +10,7 @@
     - [Unordered associative containers](#unordered-associative-containers)
 - [Container adaptors](#container-adaptors)
 - [Almost containers](#almost-containers)
+- [Container selection](#container-selection)
 
 ## Introduction
 
