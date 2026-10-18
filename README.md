@@ -58,7 +58,7 @@ The complete list of learning resources is available [here](resources/cpp_learni
 ## Future work
 
 - Topics:
-    - C++ compilation process: describe the process using a code example.
+    - C++ compilation and execution: describe the processes using a code example.
     - Debugging: tutorial of how to debug C++ code and how to analyze a core dump using GDB.
 
 ## License
